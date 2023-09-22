@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>About Us</title>
+	<title>Information</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -38,108 +38,134 @@
 				</div>
 			</div>
 		</header>
-		<main class="page-about">
-			<section class="about-hero">
-				<div class="about-hero__container">
-					<div class="about-hero__content">
-						<h1 class="about-hero__title hero-title style-title">
-							About us
-						</h1>
-						<div class="about-hero__body body-hero">
-							<div class="body-hero__text text-hero">
-								<div class="text-hero__text">
-									<p>
-										At Green Life Supplements company, we believe that nature and science can work together in perfect harmony to help people live healthier and happier lives.
-									</p>
-									<p>
-										And our founders came together with a shared passion for doing just that with safe, highly effective, all-natural supplements.
-									</p>
-								</div>
-								<h2 class="text-hero__title style-title">
-									Our story begins with a group of 4 long-time friends in this industry.
-								</h2>
-								<div class="text-hero__text">
-									<p>
-										They shared a belief that everyone deserves access to effective products formulated with the highest quality ingredients that are ethically sourced and free from harmful additives and chemicals.
-									</p>
-								</div>
-							</div>
-							<div class="body-hero__image-ibg">
-								<picture><source srcset="img/about_us-img/image-1.webp" type="image/webp"><img src="img/about_us-img/image-1.jpg" alt="man"></picture>
-							</div>
+		<main class="page-information">
+			<section class="information">
+				<div class="information__container">
+					<div class="purchase__header">
+						<div class="purchase__icon information__icon"></div>
+						<h1 class="purchase__title style-title">Edit Your Order Information</h1>
+						<h2 class="purchase__subtitle">Your Order ID: 1223-768091</h2>
+						<div class="purchase__text">
+							A confirmation email has been sent to emailaddress@gmail.com
 						</div>
 					</div>
-					<div class="about-hero__footer footer-hero">
-						<div class="footer-hero__icon">
-							<img src="img/icon/petal.svg" alt="petal">
-						</div>
-						<div class="footer-hero__text">
-							<p>
-								It was this passion for nature, science, and attention to detail that eventually led them to start our company together.
-							</p>
+					<div class="information__content">
+						<form class="information__form form" method="post">
+							<div class="form-information">
+								<h3 class="form-information__title">Edit Your Information</h3>
+								<div class="form-information__block block-form">
+									<div class="block-form__line line">
+										<label class="line__label" for="name">Your Name:</label>
+										<input class="line__input input" id="name" type="text" placeholder="Jhon Snow" name="name" autocomplete="on">
+									</div>
+									<div class="block-form__line line">
+										<label class="line__label" for="email">Email Address:</label>
+										<input class="line__input input" id="email" type="text" placeholder="emailaddress@gmail.com" name="email" autocomplete="on">
+									</div>
+								</div>
+								<div class="form-information__block block-form">
+									<h3 class="form-information__title">Edit your shipping address</h3>
+									<div class="block-form__wrapper">
+										<div class="block-form__line line">
+											<label class="line__label" for="address">Address:</label>
+											<input class="line__input input" id="address" type="text" placeholder="710 Mariners Island Blvd. Apt 210," name="address" autocomplete="on">
+										</div>
+										<div class="block-form__line line">
+											<label class="line__label" for="city">City:</label>
+											<input class="line__input input" id="city" type="text" placeholder="San Moteo, CA" name="city" autocomplete="on">
+										</div>
+										<div class="block-form__line line">
+											<label class="line__label" for="state">State/Province:</label>
+											<input class="line__input input" id="state" type="text" placeholder="State\Province" name="state" autocomplete="on">
+										</div>
+										<div class="block-form__line line">
+											<label class="line__label" for="postal">Zip/Postal:</label>
+											<input class="line__input input" id="postal" type="text" placeholder="94440" name="postal" autocomplete="on">
+										</div>
+										<div class="block-form__line line">
+											<label class="line__label" for="country">Country:</label>
+											<input class="line__input input" id="country" type="text" placeholder="United States of America" name="country" autocomplete="on">
+										</div>
+										<div class="block-form__line line">
+											<label class="line__label" for="number">Phone Number:</label>
+											<input class="line__input input" id="number" type="text" placeholder="(315) 396-7661" name="number" autocomplete="on">
+										</div>
+									</div>
+									<div class="form-information__checkout checkout">
+										<input class="checkout__input" type="checkbox" id="checkbox" value="coincidence" name="checkbox">
+										<label class="checkout__label" for="checkbox">Yes, billing address the same as shupping address</label>
+									</div>
+								</div>
+								<div class="form-information__block block-form">
+									<h3 class="form-information__title">Edit your payment method</h3>
+									<div class="block-form__line line">
+										<label class="line__label" for="card">Credit Card:</label>
+										<input class="line__input input" id="card" type="text" name="card" autocomplete="on">
+									</div>
+									<div class="block-form__line line">
+										<label class="line__label" for="date">Expiration Date:</label>
+										<div class="line__input-wrapper">
+											<input class="line__input input" id="date" type="text" placeholder="Month" name="date" autocomplete="on">
+											<input class="line__input input" id="date" type="text" placeholder="Year" name="date" autocomplete="on">
+										</div>
+									</div>
+									<div class="block-form__line line">
+										<label class="line__label" for="code">CVV Code:</label>
+										<input class="line__input input" id="code" type="text" placeholder="XXX" name="code" autocomplete="on">
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="purchase__product product purchase__product-information">
+							<div class="product-wrapper">
+								<div class="product__name product-name">
+									<div class="product-name__image-ibg">
+										<picture><source srcset="img/purchase/botl-img.webp" type="image/webp"><img src="img/purchase/botl-img.jpg" alt="botl"></picture>
+									</div>
+									<div class="product-name__info">
+										<div class="product-name__title title-info">Blood Balance</div>
+										<div class="product-name__subtitle">5 Bottles Monster Plan!</div>
+										<div class="product-name__cost text-info">$37.50 per bottle</div>
+									</div>
+								</div>
+								<div class="product-change">
+									<div class="product-change__number number">
+										<span class="number-minus">-</span>
+										<input type="number-text" value="1" />
+										<span class="number-plus">+</span>
+									</div>
+									<a class="product-change__button button" href="#">Save</a>
+								</div>
+								<div class="product__total product-total title-info">
+									<div class="product-total__subtotal product-subtotal">
+										<div class="product-subtotal__item">
+											<div class="product-subtotal__name">Subtotal</div>
+											<div class="product-subtotal__price">$225.00</div>
+										</div>
+										<div class="product-subtotal__item">
+											<div class="product-subtotal__name">Shipping</div>
+											<div class="product-subtotal__price">FREE</div>
+										</div>
+										<div class="product-subtotal__item">
+											<div class="product-subtotal__name">Taxes</div>
+											<div class="product-subtotal__price">FREE</div>
+										</div>
+									</div>
+									<div class="product-total__price product-price">
+										<div class="product-price__total">Total</div>
+										<div class="product-price__price">$225.00</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-actions action-information">
+								<a href="#" class="product-actions__button change-button button">Save Order</a>
+								<a href="#" class="product-actions__button change-button button">Cancel order</a>
+								<a href="#" class="product-actions__button change-button button">Postpone order</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<div class="about-info">
-				<div class="about-info__container">
-					<div class="about-info__text">
-						<p>
-							Over the years we have built a real community around these same principles, winning accolades and awards for the work we have done along the way.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="about-progress">
-				<div class="about-progress__container">
-					<div class="about-progress__product product-about">
-						<div class="product-about__image-ibg">
-							<picture><source srcset="img/about_us-img/image-2.webp" type="image/webp"><img src="img/about_us-img/image-2.jpg" alt="spices"></picture>
-						</div>
-						<div class="product-about__text">
-							<p class="about__text-bolt">
-								Today, Green Life Supplements company offers a wide range of products designed to support your health and wellness goals.
-							</p>
-							<p>
-								Whether you're looking for immune support, cognitive function, gut health, or overall well-being, we have a supplement that's right for you.
-							</p>
-						</div>
-					</div>
-					<div class="product-about__quality quality-about">
-						<div class="quality-about__logo">
-							<img src="img/about_us-img/certified.svg" alt="certified">
-						</div>
-						<div class="quality-about__text">
-							<p class="about__text-bolt">
-								And all of it is created at our cutting-edge laboratory that strictly adheres to Good Manufacturing Practices (GMP). Here we research and perfect our products using the latest technology for formulating, extracting, and compounding the most potent and purest ingredients.
-							</p>
-							<p>
-								Our founders' passion for wellness continues to drive our company forward and we're excited to share our products with you to help you achieve your health and wellness goals with the power of nature and science together.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="contact-us">
-				<div class="contact-us__container">
-					<div class="contact-us__content">
-						<div class="contact-us__body">
-							<div class="contact-us__icon">
-								<img src="img/icon/petal.svg" alt="petal">
-							</div>
-							<div class="contact-us__text">
-								<p>
-									If you need help with an existing order, please visit our <a href="#">Contact Us</a> page for assistance.
-								</p>
-							</div>
-							<a href="#" class="contact-us__button button">contact-us</a>
-						</div>
-						<div class="contact-us__image-ibg">
-							<picture><source srcset="img/main/contact_us.webp" type="image/webp"><img src="img/main/contact_us.jpg" alt="image"></picture>
-						</div>
-					</div>
-				</div>
-			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
