@@ -231,6 +231,71 @@ textarea.input {
   padding: 0px 0px;
 }
 
+.quantity {
+  width: 11.875rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  border: 0.0625rem solid rgba(166, 166, 166, 0.45);
+  border-radius: 0.3125rem;
+}
+
+.quantity__button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3rem;
+          flex: 0 0 3rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.quantity__button::before,
+.quantity__button::after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.quantity__button--plus::before {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.quantity__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.quantity__input input {
+  height: 100%;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  border-left: 0.0625rem solid #CCC;
+  border-right: 0.0625rem solid #CCC;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -284,23 +349,6 @@ textarea.input {
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.6;
-}
-
-span {
-  cursor: pointer;
-}
-
-.minus,
-.plus {
-  width: 20px;
-  height: 20px;
-  background: #f2f2f2;
-  border-radius: 4px;
-  padding: 8px 5px 8px 5px;
-  border: 1px solid #ddd;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
 }
 
 .header {
@@ -1943,14 +1991,8 @@ span {
   background: #6d7695;
 }
 
-.order .order__button-green {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  background-color: #62BC45;
-}
-
-.order .order__button-green:hover {
-  background-color: #59aa3e;
+.order__button.active {
+  background: #62BC45;
 }
 
 .order__actions {
@@ -3197,6 +3239,10 @@ span {
 @media (any-hover: hover) {
   .button:hover {
     background-color: #909a1f;
+  }
+
+  .quantity__button:hover {
+    background-color: rgb(219, 219, 219);
   }
 
   .menu__item:hover .menu__link::before {

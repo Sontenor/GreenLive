@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230922041319">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230922163628">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -129,10 +129,12 @@
 									</div>
 								</div>
 								<div class="product-change">
-									<div class="product-change__number number">
-										<span class="number-minus">-</span>
-										<input type="number-text" value="1" />
-										<span class="number-plus">+</span>
+									<div data-quantity class="quantity">
+										<button data-quantity-plus type="button" class="quantity__button quantity__button_plus">+</button>
+										<div class="quantity__input">
+											<input data-quantity-value type="text" name="" value="1">
+										</div>
+										<button data-quantity-minus type="button" class="quantity__button quantity__button_minus">-</button>
 									</div>
 									<a class="product-change__button button" href="#">Save</a>
 								</div>
@@ -446,26 +448,24 @@
 			}
 		};
 
-		// $(document).ready(function() {
-		// 	$('.number-minus').click(function () {
-		// 		var $input = $(this).parent().find('input');
-		// 		var count = parseInt($input.val()) - 1;
-		// 		count = count < 1 ? 1 : count;
-		// 		$input.val(count);
-		// 		$input.change();
-		// 		return false;
-		// 	});
-		// 	$('.number-plus').click(function () {
-		// 		var $input = $(this).parent().find('input');
-		// 		$input.val(parseInt($input.val()) + 1);
-		// 		$input.change();
-		// 		return false;
-		// 	});
-		// });
+		const myButtons = document.querySelectorAll(".order__button");
+
+		// Добавляем обработчик события для каждой кнопки
+		myButtons.forEach(function(button) {
+			button.addEventListener("click", function() {
+				// Удаляем класс "active" у всех кнопок
+				myButtons.forEach(function(btn) {
+					btn.classList.remove("active");
+				});
+
+				// Добавляем класс "active" к текущей кнопке
+				button.classList.add("active");
+			});
+		});
 	</script>
 	<!-- це скрипт для підключення карт гугл щоб підключити карту вам потрібно створити профіль на сайті https://console.cloud.google.com/ після реєстрації вампотрібно створити ключ API для підключення власної карти -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQv2yJHK1Avbo0R2P5_FZkvFoBbCSJq58&libraries=places,geometry&callback=initMap&_v=20230922041319" async defer></script>
-	<script src="js/app.min.js?_v=20230922041319"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQv2yJHK1Avbo0R2P5_FZkvFoBbCSJq58&libraries=places,geometry&callback=initMap&_v=20230922163628" async defer></script>
+	<script src="js/app.min.js?_v=20230922163628"></script>
 
 </body>
 
