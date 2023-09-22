@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Order-cancel</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230922190524">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header header__second">
+			<div class="header__container">
+				<a href="#" class="header__logo">
+					<img src="img/icon/short-logo.svg" alt="logo">
+					<img class="logo" src="img/icon/logo.svg" alt="logo">
+				</a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="home.html" class="menu__link">Home Page </a>
+							</li>
+							<li class="menu__item">
+								<a href="about.html" class="menu__link">About Us</a>
+							</li>
+							<li class="menu__item">
+								<a href="contact.html" class="menu__link">Contact Us</a>
+							</li>
+						</ul>
+					</nav>
+					<a href="#" class="header__button button">Life Chat</a>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+				</div>
+			</div>
+		</header>
+		<main class="page-order">
+			<section class="order order__cancel">
+				<div class="order__container">
+					<div class="order__icon"></div>
+					<h1 class="order__title">Why do you want to cancel your order?</h1>
+					<div class="order__text">
+						<p>
+							Please tell us, why you want to cancel your order?<br>
+							Maybe we can promose you something better or fix your problem?
+						</p>
+					</div>
+					<div class="order__actions">
+						<a class="order__button" href="#">Too expensive</a>
+						<a class="order__button active" href="#">Did not order</a>
+						<a class="order__button" href="#">I still have plenty</a>
+						<a class="order__button" href="#">Already in good shape</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<a class="footer__logo" href="#">
+					<img src="img/icon/logo-white.svg" alt="logo">
+				</a>
+				<div class="footer__content">
+					<ul class="footer__menu">
+						<li class="footer__item">
+							<a class="footer__link" href="home.html">Home Page</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link" href="about.html">About Us</a>
+						</li>
+						<li class="footer__item">
+							<a class="footer__link" href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+					<div class="footer__contacts contacts">
+						<a class="contacts__link contacts__link-tel" href="tel:1-234-567-890">
+							1-234-567-890
+						</a>
+						<a class="contacts__link contacts__link-mail" href="mailto:support@greenlifesupplements.com">
+							support@greenlifesupplements.com
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script>
+		let selectedPlace = null;
+		let directionsRenderer = null;
+
+
+		function initMap() {
+			// координати потрібного місця
+			const baceCoords = {
+				lat: 40.71282089532222,
+				lng: -74.00584705415072
+			};
+
+			// стилі для карти
+			const mapStyles = [{
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#f5f5f5"
+					}]
+				},
+				{
+					"elementType": "labels.icon",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				},
+				{
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				},
+				{
+					"featureType": "administrative.land_parcel",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#bdbdbd"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#eeeeee"
+					}]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#e5e5e5"
+					}]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				},
+				{
+					"featureType": "road",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#ffffff"
+					}]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#dadada"
+					}]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				},
+				{
+					"featureType": "transit.line",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#e5e5e5"
+					}]
+				},
+				{
+					"featureType": "transit.station",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#eeeeee"
+					}]
+				},
+				{
+					"featureType": "water",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#c9c9c9"
+					}]
+				},
+				{
+					"featureType": "water",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"color": "#009999"
+					}]
+				}
+			];
+
+			const map = new google.maps.Map(document.getElementById("map"), {
+				center: baceCoords,
+				zoom: 12,
+				// підключення стилів до карти
+				styles: mapStyles,
+			});
+
+			// Створення маркера
+			const bacePlaceMarker = new google.maps.Marker({
+				position: baceCoords,
+				map: map,
+				title: "",
+				// підключення власної іконки
+				icon: {
+					url: "img/purchase/icon/google-icon.svg",
+					scaledSize: new google.maps.Size(40, 40), // Розмір зображення маркера
+				},
+			});
+
+			let infoWindow = new google.maps.InfoWindow();
+			// Обробка кліку на маркер bacePlaceMarker
+			// при кліку на маркер зявляється адреса маркеру
+			bacePlaceMarker.addListener("click", () => {
+				const geocoder = new google.maps.Geocoder();
+				geocoder.geocode({
+					location: bacePlaceMarker.getPosition()
+				}, (results, status) => {
+					if (status === "OK" && results[0]) {
+						const markerAddress = results[0].formatted_address;
+						infoWindow.setContent(`Adress: ${markerAddress}`);
+						infoWindow.open(map, bacePlaceMarker); // Відкрити інфовікно над маркером
+					}
+				});
+			});
+
+
+			map.addListener("click", (event) => {
+				if (selectedPlace) {
+					selectedPlace.setMap(null);
+				}
+
+				// новий маркер вибраний користувачем
+				selectedPlace = new google.maps.Marker({
+					position: event.latLng,
+					map: map,
+					title: "Selected place",
+				});
+				// Отримання адреси вибраного місця
+				const geocoder = new google.maps.Geocoder();
+				geocoder.geocode({
+					location: event.latLng
+				}, (results, status) => {
+					if (status === "OK" && results[0]) {
+						const selectedAddress = results[0].formatted_address;
+						document.getElementById("selectedAddress").textContent = selectedAddress;
+						document.getElementById("selectedPlace").style.display = "flex";
+					}
+				});
+			});
+
+			// прослуховування події кліку на кнопку побудувати маршрут
+			document.getElementById("routeButton").addEventListener("click", buildRoute);
+
+			// функція для побудови маршруту
+			function buildRoute() {
+				if (!selectedPlace) {
+					// повідомлення якщо точку не вказано
+					alert("Target point not specified.");
+					return;
+				}
+
+				if (directionsRenderer) {
+					directionsRenderer.setMap(null);
+				}
+
+				let destination = selectedPlace.getPosition();
+
+				let directionsService = new google.maps.DirectionsService();
+				directionsRenderer = new google.maps.DirectionsRenderer({
+					map: map,
+					panel: document.getElementById("routeInfo"), // Додаємо панель для відображення інформації
+				});
+
+				let request = {
+					origin: destination,
+					destination: bacePlaceMarker.getPosition(),
+					travelMode: google.maps.TravelMode.DRIVING,
+				};
+
+				directionsService.route(request, function(response, status) {
+					if (status == google.maps.DirectionsStatus.OK) {
+						directionsRenderer.setDirections(response);
+					}
+				});
+				// Показати кнопку для переходу на Google Карти вона зявляється після створення маршруту
+				document.getElementById("openGoogleMapsButton").style.display = "block";
+			}
+
+			const openGoogleMapsButton = document.getElementById("openGoogleMapsButton");
+			openGoogleMapsButton.addEventListener("click", openGoogleMaps);
+
+			function openGoogleMaps() {
+				if (!selectedPlace) {
+					alert("Target point not specified.");
+					return;
+				}
+
+				let destination = selectedPlace.getPosition();
+
+				const originCoords = encodeURIComponent(`${bacePlaceMarker.getPosition().lat()},${bacePlaceMarker.getPosition().lng()}`);
+				const destinationCoords = encodeURIComponent(`${destination.lat()},${destination.lng()}`);
+
+				const googleMapsLink = `https://www.google.com/maps/dir/?api=1&origin=${originCoords}&destination=${destinationCoords}&travelmode=driving`;
+
+				window.open(googleMapsLink, "_blank");
+			}
+		};
+
+		const myButtons = document.querySelectorAll(".order__button");
+
+		// Добавляем обработчик события для каждой кнопки
+		myButtons.forEach(function(button) {
+			button.addEventListener("click", function() {
+				// Удаляем класс "active" у всех кнопок
+				myButtons.forEach(function(btn) {
+					btn.classList.remove("active");
+				});
+
+				// Добавляем класс "active" к текущей кнопке
+				button.classList.add("active");
+			});
+		});
+	</script>
+	<!-- це скрипт для підключення карт гугл щоб підключити карту вам потрібно створити профіль на сайті https://console.cloud.google.com/ після реєстрації вампотрібно створити ключ API для підключення власної карти -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQv2yJHK1Avbo0R2P5_FZkvFoBbCSJq58&libraries=places,geometry&callback=initMap&_v=20230922190524" async defer></script>
+	<script src="js/app.min.js?_v=20230922190524"></script>
+
+</body>
+
+</html>
